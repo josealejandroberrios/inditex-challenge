@@ -2,6 +2,8 @@
 
 Esta prueba consiste en la creación de una mini-aplicación para escuchar podcasts musicales.
 
+Requisitos: `node ^14.18.0 || >=16.0.0`
+
 ## Para ejecutar el proyecto:
 
 ### Modo desarrollo

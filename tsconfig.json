@@ -18,8 +18,19 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
-    "types": ["vitest/globals"]
+    
+    "types": ["node", "vitest/globals"],
+    "baseUrl": ".",
+    "paths": {
+      "~app/*": ["src/app/*"],
+      "~components/*": ["src/app/components/*"],
+      "~hooks/*": ["src/app/hooks/*"],
+      "~modules/*": ["src/app/modules/*"],
+      "~store/*": ["src/app/store/*"],
+      "~config/*": ["src/config/*"],
+      "~services/*": ["src/services/*"],
+      "~utils/*": ["src/utils/*"],
+    }
   },
   "include": ["src", "./setupTest.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]

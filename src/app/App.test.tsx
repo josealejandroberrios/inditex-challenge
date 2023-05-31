@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 
-import App from './App'
+import App from '~app/index';
 
 describe('<App />', () => {
   test('App mounts properly', () => {
