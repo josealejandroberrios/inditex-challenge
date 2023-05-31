@@ -1,1 +1,1 @@
-export default 'Components';
+export { default as ComponentWithSupense } from './ComponentWithSupense';

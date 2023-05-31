@@ -26,12 +26,15 @@
       "~components/*": ["src/app/components/*"],
       "~hooks/*": ["src/app/hooks/*"],
       "~modules/*": ["src/app/modules/*"],
+      "~providers/*": ["src/app/providers/*"],
       "~store/*": ["src/app/store/*"],
       "~config/*": ["src/config/*"],
+      "~constants/*": ["src/constants/*"],
+      "~globals/*": ["src/globals/*"],
       "~services/*": ["src/services/*"],
       "~utils/*": ["src/utils/*"],
     }
   },
-  "include": ["src", "./setupTest.ts"],
+  "include": ["src", "./setupTest.ts", "./node_modules/redux-persist/types"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
