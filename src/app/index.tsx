@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, Suspense } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter } from 'react-router-dom';
@@ -14,13 +14,15 @@ const App = (): ReactElement => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
+        <Suspense fallback="">
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
 
-          <CustomSnackbarProvider>
-            <Routes />
-          </CustomSnackbarProvider>
-        </ThemeProvider>
+            <CustomSnackbarProvider>
+              <Routes />
+            </CustomSnackbarProvider>
+          </ThemeProvider>
+        </Suspense>
       </BrowserRouter>
     </PersistGate>
   </Provider>

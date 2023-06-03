@@ -1,7 +1,7 @@
 import { ReactElement, lazy } from 'react';
 import { RouteObject, useRoutes } from 'react-router-dom';
 
-import { ComponentWithSupense } from '~components/index';
+import { Layout } from '~components/index';
 import { PATHS } from '~constants/paths';
 import { Nullable } from '~globals/types/commons';
 
@@ -12,22 +12,24 @@ const NotFound = lazy(() => import('~modules/NotFound'));
 
 const routes: RouteObject[] = [
   {
+    path: PATHS.HOME,
+    element: <Layout />,
     children: [
       {
-        path: PATHS.HOME,
-        element: <ComponentWithSupense component={<Podcasts />} />,
+        index: true,
+        element: <Podcasts />,
       },
       {
         path: PATHS.PODCAST,
-        element: <ComponentWithSupense component={<Podcast />} />,
+        element: <Podcast />,
       },
       {
         path: PATHS.EPISODE,
-        element: <ComponentWithSupense component={<PodcastEpisode />} />,
+        element: <PodcastEpisode />,
       },
       {
         path: '*',
-        element: <ComponentWithSupense component={<NotFound />} />,
+        element: <NotFound />,
       },
     ],
   },
