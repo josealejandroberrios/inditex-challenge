@@ -15,11 +15,9 @@ const defaultProps: PodcastCardProps = {
 };
 
 describe('<PodcastCard />', () => {
-  beforeEach(() => {
-    wrapperSetup(<PodcastCard {...defaultProps} />);
-  });
-
   test('should render with props', () => {
+    wrapperSetup(<PodcastCard {...defaultProps} />);
+
     const link = screen.getByRole('link') as HTMLAnchorElement;
     expect(link).toBeDefined();
     expect(link.href).toContain(defaultProps.id);

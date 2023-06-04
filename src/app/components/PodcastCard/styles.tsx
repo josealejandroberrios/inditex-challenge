@@ -1,9 +1,9 @@
 import { styled, Box, typographyClasses } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 const marginTopMedia = 50;
 
-export const PodcastCardContainer = styled(Link)(({ theme }) => ({
+export const PodcastCardContainer = styled(RouterLink)(({ theme }) => ({
   marginTop: marginTopMedia,
   position: 'relative',
   display: 'flex',
@@ -30,7 +30,7 @@ export const PodcastCardContent = styled(Box)(({ theme }) => ({
   gap: theme.spacing(1),
   background: theme.palette.background.paper,
   boxShadow: theme.shadows[5],
-  borderRadius: theme.shape.borderRadius / 2,
+  borderRadius: theme.shape.borderRadius,
   padding: theme.spacing(2),
   paddingTop: `calc(${marginTopMedia}px + ${theme.spacing(1)})`,
   flex: 1,

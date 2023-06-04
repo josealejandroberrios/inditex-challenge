@@ -8,6 +8,7 @@ import { PodcastState } from './types';
 
 const initialState: PodcastState = {
   details: null,
+  episodes: [],
   lastUpdate: null,
 };
 
@@ -21,6 +22,12 @@ const podcastSlice = createSlice({
     ) => {
       state.details = action.payload;
     },
+    setPodcastEpisodes: (
+      state,
+      action: PayloadAction<PodcastState['episodes']>,
+    ) => {
+      state.episodes = action.payload;
+    },
     setPodcastLastUpdate: (
       state,
       action: PayloadAction<PodcastState['lastUpdate']>,
@@ -30,12 +37,14 @@ const podcastSlice = createSlice({
   },
 });
 
-export const { setPodcastDetails, setPodcastLastUpdate } = podcastSlice.actions;
+export const { setPodcastDetails, setPodcastEpisodes, setPodcastLastUpdate } =
+  podcastSlice.actions;
 
 export const updatePodcast =
   (data: PodcastState): AppThunk =>
   (dispatch) => {
     dispatch(setPodcastLastUpdate(data.lastUpdate));
+    dispatch(setPodcastEpisodes(data.episodes));
     dispatch(setPodcastDetails(data.details));
   };
 

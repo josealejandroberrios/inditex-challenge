@@ -1,7 +1,9 @@
 import { ReactElement, useState, useLayoutEffect } from 'react';
-import { Typography } from '@mui/material';
+import { Link } from '@mui/material';
 import { MyLocation as NavigationIcon } from '@mui/icons-material';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link as RouterLink } from 'react-router-dom';
+
+import { PATHS } from '~constants/paths';
 
 import { HeaderContainer, HeaderContent } from './styles';
 
@@ -20,9 +22,15 @@ const Header = (): ReactElement => {
   return (
     <HeaderContainer position="fixed" data-testid="Header">
       <HeaderContent variant="dense">
-        <Typography variant="h5" component="h1" color="primary">
+        <Link
+          variant="h5"
+          component={RouterLink}
+          to={PATHS.HOME}
+          color="primary"
+          underline="none"
+        >
           Podcaster
-        </Typography>
+        </Link>
 
         {isNavigationChange && <NavigationIcon color="primary" />}
       </HeaderContent>
