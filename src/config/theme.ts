@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material';
-import { lightBlue, common } from '@mui/material/colors';
+import { blue, common } from '@mui/material/colors';
 
 import { ExtendTheme } from '~globals/types/theme';
 
@@ -14,8 +14,8 @@ const theme = createTheme({
   palette: {
     tonalOffset: 0.2,
     contrastThreshold: 3,
-    primary: { main: lightBlue['500'] },
-    secondary: { main: common.black },
+    primary: { main: blue['500'], contrastText: common.white },
+    secondary: { main: common.black, contrastText: common.white },
     background: { paper: common.white, default: common.white },
   },
   typography: {

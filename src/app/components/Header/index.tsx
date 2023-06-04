@@ -18,7 +18,7 @@ const Header = (): ReactElement => {
   }, [location.pathname]);
 
   return (
-    <HeaderContainer position="fixed">
+    <HeaderContainer position="fixed" data-testid="Header">
       <HeaderContent variant="dense">
         <Typography variant="h5" component="h1" color="primary">
           Podcaster

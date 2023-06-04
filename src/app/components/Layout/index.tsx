@@ -6,7 +6,7 @@ import Header from '~components/Header';
 import { LayoutContainer, LayoutContent } from './styles';
 
 const Layout = ({ children }: PropsWithChildren): ReactElement => (
-  <LayoutContainer>
+  <LayoutContainer data-testid="Layout">
     <Header />
 
     <LayoutContent>{children ? children : <Outlet />}</LayoutContent>

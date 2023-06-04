@@ -1,6 +1,7 @@
 import { Nullable } from '~globals/types/commons';
+import { ApplePodcastsEntry } from '~services/podcasts/types';
 
 export interface PodcastsState {
-  list: Record<string, string>[]; // @ Todo: Change before by correct typed
+  list: ApplePodcastsEntry[];
   lastUpdate: Nullable<number>;
 }

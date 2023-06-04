@@ -1,21 +1,12 @@
-import { render, screen } from '@testing-library/react';
-import { ThemeProvider, CssBaseline } from '@mui/material';
-import { BrowserRouter } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 
-import { theme } from '~config/index';
+import { wrapperSetup } from '~utils/testHelpers';
 
 import Header from './index';
 
 describe('<Header />', () => {
   beforeEach(() => {
-    render(
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-
-        <Header />
-      </ThemeProvider>,
-      { wrapper: BrowserRouter },
-    );
+    wrapperSetup(<Header />);
   });
 
   test('should render the title', () => {

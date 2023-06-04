@@ -1,22 +1,15 @@
-import { render, screen } from '@testing-library/react';
-import { ThemeProvider, CssBaseline } from '@mui/material';
-import { BrowserRouter } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 
-import { theme } from '~config/index';
+import { wrapperSetup } from '~utils/testHelpers';
 
 import Layout from './index';
 
 describe('<Layout />', () => {
   beforeEach(() => {
-    render(
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-
-        <Layout>
-          <h1>Content</h1>
-        </Layout>
-      </ThemeProvider>,
-      { wrapper: BrowserRouter },
+    wrapperSetup(
+      <Layout>
+        <h1>Content</h1>
+      </Layout>,
     );
   });
 
@@ -25,6 +18,6 @@ describe('<Layout />', () => {
   });
 
   test('should renders the Header Component', () => {
-    expect(screen.getByRole('banner')).toBeDefined();
+    expect(screen.getByTestId('Header')).toBeDefined();
   });
 });
