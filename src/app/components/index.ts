@@ -3,6 +3,7 @@ export { default as Header } from './Header';
 export { default as Layout } from './Layout';
 export { default as PodcastCard } from './PodcastCard';
 export { default as PodcastDetailsLayout } from './PodcastDetailsLayout';
+export { default as PodcastEpisodePreview } from './PodcastEpisodePreview';
 export { default as PodcastEpisodesCount } from './PodcastEpisodesCount';
 export { default as PodcastEpisodeTable } from './PodcastEpisodeTable';
 export { default as PodcastInfo } from './PodcastInfo';

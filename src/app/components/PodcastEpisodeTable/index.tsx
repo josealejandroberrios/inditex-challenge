@@ -43,7 +43,7 @@ const PodcastEpisodesTable = ({
         name: 'Duration',
         selector: (row) => {
           if (row.trackTimeMillis) {
-            return new Date(row.trackTimeMillis).toISOString().slice(14, 19);
+            return new Date(row.trackTimeMillis).toISOString().slice(11, 19);
           }
 
           return 'N/A';
